@@ -52,6 +52,14 @@ function findFriends(
 
 }
  
+function addInterest(
+  friend: Friend,
+  interest : string
+){
+  friend.interests = [...(friend.interests ?? []), interest];
+  return friend.interests
+
+}
 
 console.log(older(friends[0]))
 console.log(allOlder(friends))
@@ -62,3 +70,4 @@ console.log(sortColleagues(colleagues.current, (a, b) => a.contact.extension - b
 console.log(sortColleagues(colleagues.current, (a, b) => a.name.length - b.name.length,1));
 console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
 console.log(findFriends(friends, (friend) => friend.age < 35));
+console.log(addInterest(friends[1], 'Politics'))
